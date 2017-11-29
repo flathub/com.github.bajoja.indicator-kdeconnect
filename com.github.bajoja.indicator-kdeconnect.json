@@ -2,10 +2,9 @@
   "id":"com.github.bajoja.indicator-kdeconnect",
   "branch": "stable",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "3.24",
+  "runtime-version": "3.26",
   "sdk": "org.gnome.Sdk",
   "command": "indicator-kdeconnect",
-  "rename-icon": "kdeconnect",
   "rename-desktop-file": "indicator-kdeconnect.desktop",
   "finish-args": [
     "--filesystem=host",
@@ -130,15 +129,20 @@
         }
       },
     "post-install": [
+      "sh icons.sh",
       "cp data/desktop/indicator-kdeconnect-settings.desktop /app/share/applications/com.github.bajoja.indicator-kdeconnect.settings.desktop",
       "rm /app/share/applications/indicator-kdeconnect-settings.desktop"
-    ],
+    
+],
       "sources": [
         {
           "type": "git",
           "url": "https://www.github.com/Bajoja/indicator-kdeconnect.git",
-          "branch": "0.9.2",
-          "commit": "86add058ee2307adacc6adfd2b3bed3fb041cebd"
+          "branch": "0.9.3",
+          "commit": "416e9ed72f4db35c088d79e37d97fc0f26328e03"
+        },
+        { "type": "file",
+          "path": "icons.sh"
         },
         {
           "type": "patch",
@@ -146,29 +150,7 @@
         }
       ]
     },
-    {
-      "name": "icons",
-      "buildsystem": "simple",
-      "build-commands": [
-        "install -dm755 /app/share/icons/hicolor",
-        "install -dm755 /app/share/icons/Adwaita",
-        "install -dm755 /app/share/icons/elementary",
-        "install -dm755 /app/share/icons/ubuntu-mono-light",
-        "install -dm755 /app/share/icons/ubuntu-mono-dark",
-        "tar -xf icons.tar.gz",
-        "cp -aL hicolor/* /app/share/icons/hicolor",
-        "cp -aL Adwaita/* /app/share/icons/Adwaita",
-        "cp -aL elementary/* /app/share/icons/elementary",
-        "cp -aL ubuntu-mono-light/* /app/share/icons/ubuntu-mono-light",
-        "cp -aL ubuntu-mono-dark/* /app/share/icons/ubuntu-mono-dark"
-      ],
-      "sources": [
-        {
-          "type": "file",
-          "path": "icons.tar.gz"
-        }
-      ]
-    },
+    
     {
       "name": "appdata",
       "buildsystem": "simple",

@@ -93,8 +93,8 @@
  
  parser = argparse.ArgumentParser(
 
---- indicator-kdeconnect/src/contractor/Contractor.vala	2017-08-09 20:19:50.201059304 -0300
-+++ indicator-kdeconnect/src/contractor/Contractor.vala	2017-08-12 12:49:50.547395390 -0300
+--- indicator-kdeconnect/src/kdeconnectsend/KDEConnectSend.vala	2017-08-09 20:19:50.201059304 -0300
++++ indicator-kdeconnect/src/kdeconnectsend/KDEConnectSend.vala	2017-08-12 12:49:50.547395390 -0300
 @@ -25,7 +25,7 @@
  		private SList<Device> device_list;
  
