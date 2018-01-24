@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2017 Bajoja <steevenlopes@outlook.com> -->
 <component type="desktop">
-  <id>com.bajoja.indicator-kdeconnect.desktop</id>
+  <id>com.github.bajoja.indicator-kdeconnect.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-2.1+</project_license>
+  <project_license>LGPL-2.1+</project_license>
   <name>Indicator-KDEConnect</name>
   <summary>
     AppIndicator for KDE Connect
@@ -65,6 +65,10 @@
   <provides>
     <binary>indicator-kdeconnect</binary>
   </provides>
+
+  <releases>
+    <release version="0.9.3" date="2017-11-13"/>
+  </releases>
 
   <developer_name>Steeven Lopes</developer_name>
   <update_contact>steevenlopes@outlook.com</update_contact>
