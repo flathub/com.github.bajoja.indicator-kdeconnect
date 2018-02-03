@@ -6,6 +6,7 @@
   "sdk": "org.gnome.Sdk",
   "command": "indicator-kdeconnect",
   "rename-desktop-file": "indicator-kdeconnect.desktop",
+  "rename-icon": "kdeconnect",
   "finish-args": [
     "--filesystem=host",
     "--socket=x11", "--share=ipc",
@@ -150,7 +151,6 @@
         }
       ]
     },
-    
     {
       "name": "appdata",
       "buildsystem": "simple",
@@ -162,6 +162,25 @@
           "type": "file",
           "path": "com.github.bajoja.indicator-kdeconnect.appdata.xml"
         }
+      ]
+    },
+    {
+      "name": "kde-icons",
+      "buildsystem": "simple",
+      "build-commands": [
+            "sh kde-icons.sh"
+      ],
+      "sources": [
+         {
+           "type": "git",
+           "url": "git://anongit.kde.org/kdeconnect-kde.git",
+           "branch": "v1.2",
+           "commit": "db2e2516e13f0f1e8bf9efe0943159d79ee6942b"
+         },
+         {
+           "type": "file",
+           "path": "kde-icons.sh"
+         }
       ]
     }
   ]
