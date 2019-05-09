@@ -139,8 +139,8 @@
         {
           "type": "git",
           "url": "https://www.github.com/Bajoja/indicator-kdeconnect.git",
-          "branch": "0.9.3",
-          "commit": "416e9ed72f4db35c088d79e37d97fc0f26328e03"
+          "branch": "0.9.4",
+          "commit": "d0f74086ad9327343c1eb18297a98c4e6bb40bee"
         },
         { "type": "file",
           "path": "icons.sh"
@@ -174,8 +174,8 @@
          {
            "type": "git",
            "url": "git://anongit.kde.org/kdeconnect-kde.git",
-           "branch": "v1.2",
-           "commit": "db2e2516e13f0f1e8bf9efe0943159d79ee6942b"
+           "branch": "v1.3.4",
+           "commit": "f1b717e78f01159b2953632164fc6649d1353c16"
          },
          {
            "type": "file",
