@@ -59,7 +59,7 @@
   <url type="faq">https://github.com/Bajoja/indicator-kdeconnect/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion</url>
   <url type="bugtracker">https://github.com/Bajoja/indicator-kdeconnect/issues</url>
   <!-- <url type="translate">https://hosted.weblate.org/projects/indicator-kde-connect/translations/</url> -->
-
+  <content_rating type="oars-1.0" />
   <translation type="gettext">indicator-kdeconnect</translation>
 
   <provides>

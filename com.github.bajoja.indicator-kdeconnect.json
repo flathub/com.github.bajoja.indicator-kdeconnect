@@ -1,15 +1,15 @@
 {
-  "id":"com.github.bajoja.indicator-kdeconnect",
-  "branch": "stable",
+  "id": "com.github.bajoja.indicator-kdeconnect",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "3.26",
+  "runtime-version": "3.34",
   "sdk": "org.gnome.Sdk",
   "command": "indicator-kdeconnect",
   "rename-desktop-file": "indicator-kdeconnect.desktop",
   "rename-icon": "kdeconnect",
   "finish-args": [
     "--filesystem=host",
-    "--socket=x11", "--share=ipc",
+    "--socket=x11",
+    "--share=ipc",
     "--socket=pulseaudio",
     "--share=network",
     "--device=all",
@@ -19,66 +19,10 @@
     "--talk-name=org.kde.StatusNotifierWatcher",
     "--talk-name=org.freedesktop.DBus.Proprieties",
     "--talk-name=org.freedesktop.IBus",
-    "--talk-name=org.freedesktop.Notifications",
-    "--filesystem=xdg-run/dconf",
-    "--filesystem=~/.config/dconf:ro",
-    "--talk-name=ca.desrt.dconf",
-    "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+    "--talk-name=org.freedesktop.Notifications"
   ],
   "modules": [
-    {
-      "name": "libdbusmenu",
-      "config-opts": ["--with-gtk=3", "--disable-static", "--disable-tests"],
-      "build-options": {
-          "env": {
-            "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0",
-            "HAVE_VALGRIND_FALSE": "'1'",
-            "HAVE_VALGRIND_TRUE": "''"
-          }
-      },
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz",
-          "sha256": "b9cc4a2acd74509435892823607d966d424bd9ad5d0b00938f27240a1bfa878a"
-        }
-      ]
-    },
-    {
-      "name": "libindicator",
-      "config-opts": ["--with-gtk=3", "--disable-static","--disable-tests"],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://launchpad.net/libindicator/12.10/12.10.1/+download/libindicator-12.10.1.tar.gz",
-          "sha256": "b2d2e44c10313d5c9cd60db455d520f80b36dc39562df079a3f29495e8f9447f"
-        },
-        {
-          "type": "shell",
-          "commands": [
-            "sed 's/gtk_icon_info_free/g_object_unref/' -i libindicator/indicator-image-helper.c",
-            "sed 's/LIBS=\"-lm  $LIBS\"/LIBS=\" -lm  $LIBS\"/g' -i configure",
-            "sed 's/LIBM=\"-lm\"/LIBM=\" -lm\"/g' -i configure"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "libappindicator",
-      "rm-configure": true,
-      "config-opts": ["--with-gtk=3", "--disable-static", "--disable-tests", "--disable-gtk-doc-html"],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://launchpad.net/libappindicator/12.10/12.10.0/+download/libappindicator-12.10.0.tar.gz",
-          "sha256": "d5907c1f98084acf28fd19593cb70672caa0ca1cf82d747ba6f4830d4cc3b49f"
-        },
-        {
-          "type": "patch",
-          "path": "libappindicator-fixes.patch"
-        }
-      ]
-    },
+    "shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json",
     {
       "name": "python-requests",
       "buildsystem": "simple",
@@ -96,9 +40,7 @@
     {
       "name": "python-oauthlib",
       "buildsystem": "simple",
-      "build-commands": [
-        "python3 setup.py install --prefix=/app --root=/"
-      ],
+      "build-commands": ["python3 setup.py install --prefix=/app --root=/"],
       "sources": [
         {
           "type": "archive",
@@ -124,26 +66,17 @@
     {
       "name": "indicator-kdeconnect",
       "buildsystem": "cmake",
-      "build-options": {
-        "env": {
-          "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
-        }
-      },
-    "post-install": [
-      "sh icons.sh",
-      "cp data/desktop/indicator-kdeconnect-settings.desktop /app/share/applications/com.github.bajoja.indicator-kdeconnect.settings.desktop",
-      "rm /app/share/applications/indicator-kdeconnect-settings.desktop"
-    
-],
+      "post-install": [
+        "cp -R data/icons/ /app/share/icons/",        
+        "cp data/desktop/indicator-kdeconnect-settings.desktop /app/share/applications/com.github.bajoja.indicator-kdeconnect.settings.desktop",
+        "rm /app/share/applications/indicator-kdeconnect-settings.desktop"
+      ],
       "sources": [
         {
           "type": "git",
           "url": "https://www.github.com/Bajoja/indicator-kdeconnect.git",
-          "branch": "0.9.3",
-          "commit": "416e9ed72f4db35c088d79e37d97fc0f26328e03"
-        },
-        { "type": "file",
-          "path": "icons.sh"
+          "branch": "0.9.4",
+          "commit": "d0f74086ad9327343c1eb18297a98c4e6bb40bee"
         },
         {
           "type": "patch",
@@ -155,7 +88,7 @@
       "name": "appdata",
       "buildsystem": "simple",
       "build-commands": [
-          "install -Dm644 com.github.bajoja.indicator-kdeconnect.appdata.xml /app/share/appdata/com.github.bajoja.indicator-kdeconnect.appdata.xml"
+        "install -Dm644 com.github.bajoja.indicator-kdeconnect.appdata.xml /app/share/appdata/com.github.bajoja.indicator-kdeconnect.appdata.xml"
       ],
       "sources": [
         {
@@ -167,20 +100,18 @@
     {
       "name": "kde-icons",
       "buildsystem": "simple",
-      "build-commands": [
-            "sh kde-icons.sh"
-      ],
+      "build-commands": ["sh kde-icons.sh"],
       "sources": [
-         {
-           "type": "git",
-           "url": "git://anongit.kde.org/kdeconnect-kde.git",
-           "branch": "v1.2",
-           "commit": "db2e2516e13f0f1e8bf9efe0943159d79ee6942b"
-         },
-         {
-           "type": "file",
-           "path": "kde-icons.sh"
-         }
+        {
+          "type": "git",
+          "url": "https://invent.kde.org/kde/kdeconnect-kde.git",
+          "branch": "1.4",
+          "commit": "176d03610d42dc773e8966af7fa079b186f6f087"
+        },
+        {
+          "type": "file",
+          "path": "kde-icons.sh"
+        }
       ]
     }
   ]
