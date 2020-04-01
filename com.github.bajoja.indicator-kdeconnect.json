@@ -105,8 +105,8 @@
         {
           "type": "git",
           "url": "https://invent.kde.org/kde/kdeconnect-kde.git",
-          "branch": "1.4",
-          "commit": "176d03610d42dc773e8966af7fa079b186f6f087"
+          "branch": "v1.4",
+          "commit": "173e388177515d9ff49f813c55182b67c31067a0"
         },
         {
           "type": "file",
