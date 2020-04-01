@@ -15,6 +15,11 @@
     such as Ubuntu Unity and Pantheon. It started as an AppIndicator,
     but you can send files and URLs easily through KDE Connect with kdeconnect-send.
     </p>
+    <p>
+    This flatpak don't come with KDE Connect inside.
+    Make sure that you have KDE Connect installed on system or in another flatpak container,
+    otherwise it's will not work.
+    </p>
     <p>Features:</p>
     <ul>
     	<li>Indicator in the panel which show your devices, with its name, status, and battery;</li>
@@ -67,7 +72,7 @@
   </provides>
 
   <releases>
-    <release version="0.9.3" date="2017-11-13"/>
+    <release version="0.9.4" date="2018-04-08"/>
   </releases>
 
   <developer_name>Steeven Lopes</developer_name>
