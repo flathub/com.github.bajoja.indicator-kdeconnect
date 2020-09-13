@@ -1,7 +1,7 @@
 {
   "id": "com.github.bajoja.indicator-kdeconnect",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "3.34",
+  "runtime-version": "3.36",
   "sdk": "org.gnome.Sdk",
   "command": "indicator-kdeconnect",
   "rename-desktop-file": "indicator-kdeconnect.desktop",
