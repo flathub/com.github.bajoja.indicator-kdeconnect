@@ -1,7 +1,7 @@
 {
   "id": "com.github.bajoja.indicator-kdeconnect",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "3.36",
+  "runtime-version": "41",
   "sdk": "org.gnome.Sdk",
   "command": "indicator-kdeconnect",
   "rename-desktop-file": "indicator-kdeconnect.desktop",
@@ -75,7 +75,7 @@
         {
           "type": "git",
           "url": "https://www.github.com/Bajoja/indicator-kdeconnect.git",
-          "branch": "0.9.4",
+          "tag": "0.9.4",
           "commit": "d0f74086ad9327343c1eb18297a98c4e6bb40bee"
         },
         {
@@ -105,8 +105,8 @@
         {
           "type": "git",
           "url": "https://invent.kde.org/kde/kdeconnect-kde.git",
-          "branch": "v1.4",
-          "commit": "173e388177515d9ff49f813c55182b67c31067a0"
+          "tag": "v21.12.2",
+          "commit": "364193797c1f4d03e4eb2a7c8fed91067400cbfa"
         },
         {
           "type": "file",
