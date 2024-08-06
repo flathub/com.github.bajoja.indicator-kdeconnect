@@ -72,10 +72,9 @@
       ],
       "sources": [
         {
-          "type": "git",
-          "url": "https://www.github.com/Bajoja/indicator-kdeconnect.git",
-          "branch": "0.9.4",
-          "commit": "d0f74086ad9327343c1eb18297a98c4e6bb40bee"
+          "type": "archive",
+          "url": "https://github.com/b4j4/indicator-kdeconnect/archive/refs/tags/0.9.4.tar.gz",
+          "sha256": "416510171e6c2a7a87f7b0b43e2ddf135b152952c5032aecd82880ba88f9c2e0"
         },
         {
           "type": "patch",
@@ -102,10 +101,9 @@
       "build-commands": ["sh kde-icons.sh"],
       "sources": [
         {
-          "type": "git",
-          "url": "https://invent.kde.org/kde/kdeconnect-kde.git",
-          "branch": "v1.4",
-          "commit": "173e388177515d9ff49f813c55182b67c31067a0"
+          "type": "archive",
+          "url": "https://invent.kde.org/network/kdeconnect-kde/-/archive/v1.4/kdeconnect-kde-v1.4.tar.gz",
+          "sha256": "60aac1fc8d310fd6e5fed6018cf9fdd2bc8025a43a8806e11deebba4487faac0"
         },
         {
           "type": "file",
