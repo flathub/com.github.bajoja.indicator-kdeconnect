@@ -13,7 +13,6 @@
     "--socket=pulseaudio",
     "--share=network",
     "--device=all",
-    "--own-name=com.github.bajoja.indicator-kdeconnect.settings",
     "--talk-name=org.kde.kdeconnect",
     "--talk-name=org.kde.kdeconnectd",
     "--talk-name=org.kde.StatusNotifierWatcher",
