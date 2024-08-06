@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2017 Bajoja <steevenlopes@outlook.com> -->
-<component type="desktop">
-  <id>com.github.bajoja.indicator-kdeconnect.desktop</id>
+<component type="desktop-application">
+  <id>com.github.bajoja.indicator-kdeconnect</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LGPL-2.1+</project_license>
   <name>Indicator-KDEConnect</name>
@@ -59,18 +59,22 @@
     <category>GTK</category>
   </categories>
 
-  <url type="homepage">https://github.com/Bajoja/indicator-kdeconnect</url>
-  <!-- <url type="help">https://github.com/Bajoja/indicator-kdeconnect</url> -->
-  <url type="faq">https://github.com/Bajoja/indicator-kdeconnect/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion</url>
-  <url type="bugtracker">https://github.com/Bajoja/indicator-kdeconnect/issues</url>
+  <url type="homepage">https://github.com/b4j4/indicator-kdeconnect</url>
+  <!-- <url type="help">https://github.com/b4j4/indicator-kdeconnect</url> -->
+  <url type="faq">https://github.com/b4j4/indicator-kdeconnect/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion</url>
+  <url type="bugtracker">https://github.com/b4j4/indicator-kdeconnect/issues</url>
   <!-- <url type="translate">https://hosted.weblate.org/projects/indicator-kde-connect/translations/</url> -->
-  <content_rating type="oars-1.0" />
+  <content_rating type="oars-1.1" />
   <translation type="gettext">indicator-kdeconnect</translation>
 
   <provides>
     <binary>indicator-kdeconnect</binary>
+    <id>com.github.bajoja.indicator-kdeconnect.desktop</id>
   </provides>
-
+  <replaces>
+    <id>com.github.bajoja.indicator-kdeconnect.desktop</id>
+  </replaces>
+  <launchable type="desktop-id">com.github.bajoja.indicator-kdeconnect.desktop</launchable>
   <releases>
     <release version="0.9.4" date="2018-04-08"/>
   </releases>
